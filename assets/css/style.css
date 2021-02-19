@@ -183,7 +183,7 @@ img {
     .home__img {
         height: 300px;
         max-width: 90%;
-        margin-bottom: 5%;
+        margin-bottom: 2%;
         z-index: -1;
         background-size: cover;
     }
@@ -506,7 +506,7 @@ img {
     .home__img {
         z-index: -1;
         right: 2%;
-        bottom: 5%;
+        bottom: 4%;
         width: 60%;
     }
 
