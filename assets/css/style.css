@@ -171,7 +171,7 @@ img {
     }
 
     .card {
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
     }
 
     .home__data {
@@ -337,7 +337,7 @@ img {
 .card {
     width: 100%;
     max-width: 50rem;
-    min-height: 28rem;
+    min-height: 20rem;
     background-color: #e48400;
     color: #ffffff;
     border: 1px solid #ff9f00;
@@ -357,11 +357,9 @@ img {
 }
 
 .card-text {
-    text-align: justify;
-    padding: 0 1rem;
-    padding-top: 0px;
-    font-weight: lighter;
-    font-style: italic;
+    text-align: match-parent;
+    margin: 0rem 3rem;
+    font-weight: normal;
     font-size: 0.9rem;
 }
 
