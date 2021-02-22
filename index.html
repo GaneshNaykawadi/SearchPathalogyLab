@@ -83,13 +83,13 @@
 
                             <div class="container">
                                 <label for="fullname"><b>Full Name:</b></label>
-                                <input type="text" placeholder="Enter your full name" pattern="[A-Za-z ]{1,32}" id="fullname" required="true" />
+                                <input type="text" placeholder="Enter your full name" id="fullname" required />
 
                                 <label for="mobile"><b>Contact Number:</b></label>
-                                <input type="text" placeholder="Enter your mobile number" pattern="[6-9]{1}[0-9]{9}" id="mobile" required="true" />
+                                <input type="text" placeholder="Enter your mobile number" id="mobile" required />
 
                                 <label for="details"><b>Enter Details:</b></label>
-                                <textarea rows="4" cols="50" pattern="[A-Za-z 0-9]{1,300}" id="details" required>Please collect my test sample at 7:00 PM. Address: {your address}</textarea>
+                                <textarea rows="4" cols="50" id="details" required>Please collect my test sample at 7:00 PM. Address: {your address}</textarea>
 
                                 <button class="modal_button" type="submit" onclick="sendEmail()">Book Appointment</button>
                                 <button class="modal_button" type="button" onclick="hideModal()">Cancel</button>
