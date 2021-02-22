@@ -125,11 +125,13 @@ window.onclick = function (event) {
 
 function sendEmail() {
     debugger;
+    let fullname = document.getElementById('fullname');
+    let mobile = document.getElementById('mobile');
+    let message = document.getElementById('details');
     let from = "searchdiagnostic.collection@gmail.com";
-    let subject = "New Collection Booking Request from: " + document.getElementById("fullname").value + " / (" + document.getElementById("mobile").value + ").";
-    let message = document.getElementById("details");
+    let subject = "New Collection Booking Request from: " + fullname.value + " / (" + mobile.value + ").";
 
-    if (from != null && subject != null && message != null) {
+    if (fullname.value != "" && mobile.value != "" && message.value != "" && from != null && subject != null && message != null) {
         debugger;
         Email.send({
             Host: "smtp.elasticemail.com",
@@ -147,11 +149,11 @@ function sendEmail() {
             else
                 $.notify("Something went wrong!", "error");
         });
-    }
 
-    /*===== CLEAR THE FORM FIELDS =====*/
-    document.getElementById('fullname').value = '';
-    document.getElementById('mobile').value = '';
-    document.getElementById('details').value = '';
-    hideModal();
+        /*===== CLEAR THE FORM FIELDS =====*/
+        fullname.value = "";
+        mobile.value = "";
+        message.value = "Please collect my test sample at 7:00 PM. Address: {your address}";
+        hideModal();
+    }
 }
