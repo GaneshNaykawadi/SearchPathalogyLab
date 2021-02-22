@@ -214,6 +214,10 @@ img {
     .card {
         margin-bottom: 1rem;
     }
+
+    .flex-container {
+        flex-direction: column;
+    }
 }
 
 .nav__item {
