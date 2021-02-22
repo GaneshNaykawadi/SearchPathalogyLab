@@ -217,6 +217,7 @@ img {
 
     .flex-container {
         flex-direction: column;
+        padding: 10px;
     }
 }
 
@@ -540,7 +541,7 @@ span.psw {
 }
 
 .flex-info-container {
-    padding-top: 2rem;
+    padding-top: 1.5rem;
     font-size: 0.9rem;
     display: flex;
     flex-direction: column;
