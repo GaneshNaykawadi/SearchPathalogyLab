@@ -17,12 +17,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
 
     <!-- ===== External CSS ===== -->
-    <link rel="stylesheet" href="assets/css/style.min.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- ===== BOX /FONT-OWESOME ICONS ===== -->
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+
 
     <title>Search Diagnostic Center</title>
     <link rel="shortcut icon" href="assets/img/title-icon.png" />
@@ -50,7 +51,6 @@
             </div>
         </nav>
     </header>
-
     <main class="l-main">
         <!--===== HOME Section =====-->
         <section class="home bd-grid" id="home">
@@ -60,8 +60,43 @@
                         <li>Best Diagnostic Center in Pune.</li>
                         <li>We Collect sample from home.</li>
                     </ul>
+                    <div class="btn-flex-container">
+                        <div class="btn-first">
+                            <a href="./assets/img/Search_Diagnostics_Brochure.pdf" target="_blank" rel="noopener" title="Get Quote" download class="button"><i class='bx bxs-file'></i>&nbsp; download test list</a>
+                        </div>
+                        <div class="btn-second">
+                            <a rel="noopener" title="Book an Appointment" id="btnBooking" onclick="displayModal()" class="button"><i class='bx bx-plus-medical'></i>&nbsp; Book an Appointment</a>
+                        </div>
 
-                    <a href="./assets/img/Search_Diagnostics_Brochure.pdf" target="_blank" rel="noopener" title="Get Quote" download class="button"><i class='bx bxs-file'></i>&nbsp; download brochure</a>
+                    </div>
+
+                </div>
+
+                <!-- The Modal -->
+                <div id="ModelBooking" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="close" onclick="hideModal()">&times;</span>
+                            <h3>Fill Appointment Details</h3>
+                        </div>
+                        <form action="#" id="frmBooking" method="post">
+
+                            <div class="container">
+                                <label for="fullname"><b>Full Name:</b></label>
+                                <input type="text" placeholder="Enter your full name" pattern="[A-Za-z ]{1,32}" id="fullname" required="true" />
+
+                                <label for="mobile"><b>Contact Number:</b></label>
+                                <input type="text" placeholder="Enter your mobile number" pattern="[6-9]{1}[0-9]{9}" id="mobile" required="true" />
+
+                                <label for="details"><b>Enter Details:</b></label>
+                                <textarea rows="4" cols="50" pattern="[A-Za-z 0-9]{1,300}" id="details" required>Please collect my test sample at 7:00 PM. Address: {your address}</textarea>
+
+                                <button class="modal_button" type="submit" onclick="sendEmail()">Book Appointment</button>
+                                <button class="modal_button" type="button" onclick="hideModal()">Cancel</button>
+                            </div>
+
+                        </form>
+                    </div>
                 </div>
 
                 <div class="home__img" home-flex-right>
@@ -97,39 +132,39 @@
                 <div class="card">
                     <p class="card-title">Blood Testing</p>
                     <div class="card-text">
-                    <ul style="list-style-type:disc;">
-                        <li>Heamogram</li>
-                        <li>Blood sugar fasting /pp</li>
-                        <li>HBA1C</li>
-                        <li>LIVER FUNCTION TEST</li>
-                        <li>KIDPRO (KFT)</li>
-                        <li>LIPID PROFILE</li>
-                        <li>DENGUE/MALERIA/FEVER</li>
-                    </ul>
+                        <ul style="list-style-type:disc;">
+                            <li>Heamogram</li>
+                            <li>Blood sugar fasting /pp</li>
+                            <li>HBA1C</li>
+                            <li>LIVER FUNCTION TEST</li>
+                            <li>KIDPRO (KFT)</li>
+                            <li>LIPID PROFILE</li>
+                            <li>DENGUE/MALERIA/FEVER</li>
+                        </ul>
                     </div>
                 </div>
 
                 <div class="card">
                     <p class="card-title">Urine Testing</p>
                     <div class="card-text">
-                    <ul style="list-style-type:disc;">
-                        <li>URINE ROUTINE</li>
-                        <li>URINE C/S</li>
-                        <li>URINE MICRO</li>
-                        <li>URINE 24 HRS/ URINE PROTIEN</li>
-                        <li>STOOL ROUTINE</li>
-                    </ul>
+                        <ul style="list-style-type:disc;">
+                            <li>URINE ROUTINE</li>
+                            <li>URINE C/S</li>
+                            <li>URINE MICRO</li>
+                            <li>URINE 24 HRS/ URINE PROTIEN</li>
+                            <li>STOOL ROUTINE</li>
+                        </ul>
                     </div>
                 </div>
 
                 <div class="card">
                     <p class="card-title">Sputum Testing</p>
                     <div class="card-text">
-                    <ul style="list-style-type:disc;">
-                        <li>SPUTUM FOR AFB</li>
-                        <li>SPUTUM FC/S</li>
-                        <li>GRAM STEAN</li>
-                    </ul>
+                        <ul style="list-style-type:disc;">
+                            <li>SPUTUM FOR AFB</li>
+                            <li>SPUTUM FC/S</li>
+                            <li>GRAM STEAN</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -156,7 +191,7 @@
                     </div>
                 </div>
                 <div class="flex-item-right">
-                    <iframe id="map" rel="preconnect" title="Search Lab Address" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60557.48271713362!2d73.77437017910154!3d18.44545120000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc295107dd5bc37%3A0xbb1a798175ef0dfc!2sKal-bhiravNath%20Mandir%20(Dhayari%20Gaon)!5e0!3m2!1sen!2sin!4v1612063168038!5m2!1sen!2sin" zoom="10" allowfullscreen="true" aria-hidden="false"></iframe>
+                    <iframe id="map" rel="preconnect" title="Search Lab Address" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.5182119505253!2d73.80929861439682!3d18.460171675837792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc295cd026da121%3A0xcb3051e4246dc61c!2sSearch%20Diagnostic%20Center!5e0!3m2!1sen!2sin!4v1613833154848!5m2!1sen!2sin" zoom="10" allowfullscreen="true" aria-hidden="false"></iframe>
                 </div>
             </div>
 
@@ -179,8 +214,14 @@
     <!--===== SCROLL REVEAL =====-->
     <script src="https://unpkg.com/scrollreveal"></script>
 
+    <!--===== SmtpJS - send mail from JavaScript =====-->
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <!--===== NotifyJS =====-->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha2569/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="assets/js/notify.min.js"></script>
     <!--===== MAIN JS =====-->
-    <script src="assets/js/main.min.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
